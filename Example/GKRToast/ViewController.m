@@ -9,6 +9,7 @@
 #import "GKRToast.h"
 #import "AIMToast.h"
 #import "AIMFancyToast.h"
+#import "CustomToast.h"
 
 @interface ViewController ()
 
@@ -21,14 +22,16 @@
 }
 
 
-- (IBAction)showCustomNotification:(id)sender {
+- (IBAction)showCustomNotification:(UIButton *)sender {
     [AIMToast show:[sender titleForState:UIControlStateNormal]];
 }
 
-- (IBAction)showComplexAnimationNotification:(id)sender {
+- (IBAction)showComplexAnimationNotification:(UIButton *)sender {
     [AIMFancyToast show:[sender titleForState:UIControlStateNormal]];
 }
 
-
+- (IBAction)showCustomSimpleNotification:(UIButton *)sender {
+    [CustomToast show:[sender titleForState:UIControlStateNormal]];
+}
 
 @end

@@ -44,13 +44,24 @@
                                     <action selector="showComplexAnimationNotification:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="xHE-aA-4hl"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ETa-F9-0LT">
+                                <rect key="frame" x="117" y="310" width="141" height="30"/>
+                                <state key="normal" title="Simple custom toast">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showCustomSimpleNotification:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="OBQ-B4-RMG"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="qbS-7k-KsY" secondAttribute="centerX" id="4Jh-Lv-XQr"/>
                             <constraint firstItem="qbS-7k-KsY" firstAttribute="top" secondItem="zCV-xZ-rbt" secondAttribute="bottom" constant="50" id="AyG-Mg-qeU"/>
+                            <constraint firstItem="ETa-F9-0LT" firstAttribute="top" secondItem="qbS-7k-KsY" secondAttribute="bottom" constant="50" id="JAK-IK-oCO"/>
                             <constraint firstAttribute="centerX" secondItem="SHN-nL-Yvd" secondAttribute="centerX" id="TbU-Cv-t4m"/>
                             <constraint firstItem="zCV-xZ-rbt" firstAttribute="top" secondItem="SHN-nL-Yvd" secondAttribute="bottom" constant="50" id="gqN-Gp-g94"/>
+                            <constraint firstAttribute="centerX" secondItem="ETa-F9-0LT" secondAttribute="centerX" id="nSq-kt-e59"/>
                             <constraint firstAttribute="centerX" secondItem="zCV-xZ-rbt" secondAttribute="centerX" id="xCa-FB-4Xn"/>
                             <constraint firstItem="SHN-nL-Yvd" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="50" id="zfO-7B-gUq"/>
                         </constraints>
