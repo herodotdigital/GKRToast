@@ -61,6 +61,16 @@
     [toast show:text];
 }
 
++ (void)hide {
+    GKRToast *toast = [self sharedInstance];
+    [toast hide];
+}
+
++ (GKRToastConfigure *)currentConfig {
+    [self configureIfNeeded];
+    return [GKRToast sharedInstance].config;
+}
+
 + (void)configureIfNeeded {
     NSString *currentClass = NSStringFromClass(self);
     NSString *currentlyConfiguredForClass = [GKRToast sharedInstance].configuredForClass;
@@ -87,18 +97,19 @@
         make.width.lessThanOrEqualTo(superview.mas_width).and.multipliedBy(0.8f);
         make.height.lessThanOrEqualTo(superview.mas_height).and.multipliedBy(0.8f);
     }];
-    [self.textContainer addGestureRecognizer:self.textLabelGesture];
+    if (self.config.hideOnTouch) {
+        [self.textContainer addGestureRecognizer:self.textLabelGesture];
+    } else {
+        [self.textContainer removeGestureRecognizer:self.textLabelGesture];
+    }
+    
 }
 
 - (void)setupTextLabel:(NSString *)text {
     self.textLabel = self.config.textLabel;
     self.textLabel.text = text;
     [self.textContainer addSubview:self.textLabel];
-    UIView *superview = self.textContainer;
-    [self.textLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(superview).insets(self.config.textEdgeInsets);
-    }];
-    [self.textLabel addGestureRecognizer:self.textLabelGesture];
+    self.config.setupContainer();
 }
 
 - (void)setupBackgroundView {
@@ -110,7 +121,11 @@
         make.bottom.equalTo(self.backgroundView.superview.mas_bottom);
         make.right.equalTo(self.backgroundView.superview.mas_right);
     }];
-    [self.backgroundView addGestureRecognizer:self.backgroundGesture];
+    if (self.config.hideOnTouch) {
+        [self.backgroundView addGestureRecognizer:self.backgroundGesture];
+    } else {
+        [self.backgroundView removeGestureRecognizer:self.backgroundGesture];
+    }
 }
 
 - (void)animations {
@@ -192,6 +207,7 @@
     if (self) {
         self.textEdgeInsets = (UIEdgeInsets){10, 10, 10, 10};
         self.hideTimeOut = 5.0f;
+        self.hideOnTouch = YES;
     }
     return self;
 }
@@ -223,6 +239,20 @@
     _textContainer.backgroundColor = [UIColor colorWithWhite:0.000 alpha:0.800];
     _textContainer.layer.cornerRadius = 5.0f;
     return _textContainer;
+}
+
+- (void(^)())setupContainer {
+    if (_setupContainer) {
+        return _setupContainer;
+    }
+    __weak __typeof(self) weakSelf = self;
+    _setupContainer = ^{
+        UIView *superview = weakSelf.textContainer;
+        [weakSelf.textLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.equalTo(superview).insets(weakSelf.textEdgeInsets);
+        }];
+    };
+    return _setupContainer;
 }
 
 - (void(^)(UIView *textContainer, UILabel *textLabel, MASConstraint *centerX, MASConstraint *centerY))animateShowLabel {
@@ -280,6 +310,14 @@
         }];
     };
     return _animateHideBackground;
+}
+
+- (NSMutableDictionary *)additionalConfig {
+    if (_additionalConfig) {
+        return _additionalConfig;
+    }
+    _additionalConfig = [NSMutableDictionary new];
+    return _additionalConfig;
 }
 
 @end

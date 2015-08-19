@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -18,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SHN-nL-Yvd">
-                                <rect key="frame" x="52" y="70" width="271" height="30"/>
+                                <rect key="frame" x="52" y="40" width="271" height="30"/>
                                 <state key="normal" title="GKRToast - default (Android style) toast">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -27,7 +28,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zCV-xZ-rbt">
-                                <rect key="frame" x="80" y="150" width="216" height="30"/>
+                                <rect key="frame" x="80" y="90" width="216" height="30"/>
                                 <state key="normal" title="AIMToast - Custom styled toast">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -36,16 +37,24 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qbS-7k-KsY">
-                                <rect key="frame" x="27" y="230" width="321" height="30"/>
+                                <rect key="frame" x="27" y="140" width="321" height="30"/>
                                 <state key="normal" title="AIMFancyToast - toast with complex animation">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="titleLabel.numberOfLines">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="titleLabel.textAlignment">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="showComplexAnimationNotification:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="xHE-aA-4hl"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ETa-F9-0LT">
-                                <rect key="frame" x="117" y="310" width="141" height="30"/>
+                                <rect key="frame" x="117" y="190" width="141" height="30"/>
                                 <state key="normal" title="Simple custom toast">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -53,17 +62,41 @@
                                     <action selector="showCustomSimpleNotification:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="OBQ-B4-RMG"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iyz-HN-5lM">
+                                <rect key="frame" x="71" y="240" width="234" height="30"/>
+                                <state key="normal" title="AIMImageToast - toast with image">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showImageNotification:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="FMf-Iw-5Oe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GEp-g9-21b">
+                                <rect key="frame" x="102" y="290" width="170" height="30"/>
+                                <state key="normal" title="AIMLoaderToast - loader">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showLoader:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="FX5-hX-1Bs"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="iyz-HN-5lM" secondAttribute="centerX" id="1b8-KX-Jp3"/>
                             <constraint firstAttribute="centerX" secondItem="qbS-7k-KsY" secondAttribute="centerX" id="4Jh-Lv-XQr"/>
-                            <constraint firstItem="qbS-7k-KsY" firstAttribute="top" secondItem="zCV-xZ-rbt" secondAttribute="bottom" constant="50" id="AyG-Mg-qeU"/>
-                            <constraint firstItem="ETa-F9-0LT" firstAttribute="top" secondItem="qbS-7k-KsY" secondAttribute="bottom" constant="50" id="JAK-IK-oCO"/>
+                            <constraint firstItem="qbS-7k-KsY" firstAttribute="top" secondItem="zCV-xZ-rbt" secondAttribute="bottom" constant="20" id="AyG-Mg-qeU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qbS-7k-KsY" secondAttribute="trailing" constant="11" id="IPl-Gv-WPC"/>
+                            <constraint firstItem="ETa-F9-0LT" firstAttribute="top" secondItem="qbS-7k-KsY" secondAttribute="bottom" constant="20" id="JAK-IK-oCO"/>
                             <constraint firstAttribute="centerX" secondItem="SHN-nL-Yvd" secondAttribute="centerX" id="TbU-Cv-t4m"/>
-                            <constraint firstItem="zCV-xZ-rbt" firstAttribute="top" secondItem="SHN-nL-Yvd" secondAttribute="bottom" constant="50" id="gqN-Gp-g94"/>
+                            <constraint firstAttribute="centerX" secondItem="GEp-g9-21b" secondAttribute="centerX" id="cPQ-ue-iio"/>
+                            <constraint firstItem="GEp-g9-21b" firstAttribute="top" secondItem="iyz-HN-5lM" secondAttribute="bottom" constant="20" id="d4I-vd-Pdb"/>
+                            <constraint firstItem="zCV-xZ-rbt" firstAttribute="top" secondItem="SHN-nL-Yvd" secondAttribute="bottom" constant="20" id="gqN-Gp-g94"/>
                             <constraint firstAttribute="centerX" secondItem="ETa-F9-0LT" secondAttribute="centerX" id="nSq-kt-e59"/>
+                            <constraint firstItem="iyz-HN-5lM" firstAttribute="top" secondItem="ETa-F9-0LT" secondAttribute="bottom" constant="20" id="uwi-6X-qIe"/>
                             <constraint firstAttribute="centerX" secondItem="zCV-xZ-rbt" secondAttribute="centerX" id="xCa-FB-4Xn"/>
-                            <constraint firstItem="SHN-nL-Yvd" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="50" id="zfO-7B-gUq"/>
+                            <constraint firstItem="qbS-7k-KsY" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="11" id="y1D-c0-O4F"/>
+                            <constraint firstItem="SHN-nL-Yvd" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="20" id="zfO-7B-gUq"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>

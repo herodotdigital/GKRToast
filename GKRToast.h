@@ -14,10 +14,12 @@
 @interface GKRToast : NSObject
 
 + (void)show:(NSString *)text;
++ (void)hide;
 
 + (GKRToastConfigure *)configure;
 
 + (void)setConfiguration:(GKRToastConfigure *)config;
++ (GKRToastConfigure *)currentConfig;
 
 @end
 
@@ -28,7 +30,13 @@
 @property (strong, nonatomic) UILabel *textLabel;
 @property (assign, nonatomic) UIEdgeInsets textEdgeInsets;
 
+@property (strong, nonatomic) NSMutableDictionary *additionalConfig;
+
 @property (assign, nonatomic) NSTimeInterval hideTimeOut;
+
+@property (assign, nonatomic) BOOL hideOnTouch;
+
+@property (copy, nonatomic) void(^setupContainer)();
 
 @property (copy, nonatomic) void(^animateShowLabel)(UIView *textContainer, UILabel *textLabel, MASConstraint *centerX, MASConstraint *centerY);
 
