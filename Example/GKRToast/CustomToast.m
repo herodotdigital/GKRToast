@@ -23,6 +23,7 @@
             [textContainer layoutIfNeeded];
         }];
     };
+    configure.backgroundView.backgroundColor = [UIColor blackColor];
     return configure;
 };
 

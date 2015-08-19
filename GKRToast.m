@@ -80,9 +80,9 @@
 }
 
 - (void)show:(NSString *)text {
+    [self setupBackgroundView];
     [self setupTextContainer];
     [self setupTextLabel:text];
-    [self setupBackgroundView];
     [self animations];
     [self startTimer];
 }
