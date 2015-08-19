@@ -13,7 +13,7 @@
 		D94B560A1B836DC00057ADCC /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = D94B56081B836DC00057ADCC /* logo.png */; };
 		D94B560B1B836DC00057ADCC /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D94B56091B836DC00057ADCC /* logo@2x.png */; };
 		D94B5AC51B8486610057ADCC /* animation.gif in Resources */ = {isa = PBXBuildFile; fileRef = D94B5AC41B8486610057ADCC /* animation.gif */; };
-		D94B5AC81B84B1600057ADCC /* AIMLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = D94B5AC71B84B1600057ADCC /* AIMLoader.m */; };
+		D94B5ACB1B84BF840057ADCC /* AIMLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = D94B5ACA1B84BF840057ADCC /* AIMLoader.m */; };
 		D97D8A9C1B7EA4390085D821 /* GKRToast.m in Sources */ = {isa = PBXBuildFile; fileRef = D97D8A961B7EA4390085D821 /* GKRToast.m */; };
 		D97D8A9D1B7EA4390085D821 /* AIMFancyToast.m in Sources */ = {isa = PBXBuildFile; fileRef = D97D8A981B7EA4390085D821 /* AIMFancyToast.m */; };
 		D97D8A9E1B7EA4390085D821 /* AIMToast.m in Sources */ = {isa = PBXBuildFile; fileRef = D97D8A9A1B7EA4390085D821 /* AIMToast.m */; };
@@ -47,8 +47,8 @@
 		D94B56081B836DC00057ADCC /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = SOURCE_ROOT; };
 		D94B56091B836DC00057ADCC /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x.png"; sourceTree = SOURCE_ROOT; };
 		D94B5AC41B8486610057ADCC /* animation.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = animation.gif; sourceTree = "<group>"; };
-		D94B5AC61B84B1600057ADCC /* AIMLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIMLoader.h; sourceTree = "<group>"; };
-		D94B5AC71B84B1600057ADCC /* AIMLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIMLoader.m; sourceTree = "<group>"; };
+		D94B5AC91B84BF840057ADCC /* AIMLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIMLoader.h; sourceTree = "<group>"; };
+		D94B5ACA1B84BF840057ADCC /* AIMLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIMLoader.m; sourceTree = "<group>"; };
 		D97D8A961B7EA4390085D821 /* GKRToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GKRToast.m; path = ../../GKRToast.m; sourceTree = "<group>"; };
 		D97D8A971B7EA4390085D821 /* GKRToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GKRToast.h; path = ../../GKRToast.h; sourceTree = "<group>"; };
 		D97D8A981B7EA4390085D821 /* AIMFancyToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AIMFancyToast.m; path = ../../AIMFancyToast.m; sourceTree = "<group>"; };
@@ -137,8 +137,8 @@
 				D97D8A981B7EA4390085D821 /* AIMFancyToast.m */,
 				D94B56051B83671F0057ADCC /* AIMImageToast.h */,
 				D94B56061B83671F0057ADCC /* AIMImageToast.m */,
-				D94B5AC61B84B1600057ADCC /* AIMLoader.h */,
-				D94B5AC71B84B1600057ADCC /* AIMLoader.m */,
+				D94B5AC91B84BF840057ADCC /* AIMLoader.h */,
+				D94B5ACA1B84BF840057ADCC /* AIMLoader.m */,
 				D94961E11B7EB40B007AD90D /* CustomToast.h */,
 				D94961E21B7EB40B007AD90D /* CustomToast.m */,
 				D9B0F6921B7BC955006CFF5B /* AppDelegate.h */,
@@ -325,7 +325,7 @@
 				D9B0F6971B7BC955006CFF5B /* ViewController.m in Sources */,
 				D97D8A9D1B7EA4390085D821 /* AIMFancyToast.m in Sources */,
 				D9B0F6941B7BC955006CFF5B /* AppDelegate.m in Sources */,
-				D94B5AC81B84B1600057ADCC /* AIMLoader.m in Sources */,
+				D94B5ACB1B84BF840057ADCC /* AIMLoader.m in Sources */,
 				D9B0F6911B7BC955006CFF5B /* main.m in Sources */,
 				D97D8A9E1B7EA4390085D821 /* AIMToast.m in Sources */,
 				D94961E31B7EB40B007AD90D /* CustomToast.m in Sources */,

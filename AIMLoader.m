@@ -21,7 +21,6 @@
     } else {
         config.loaderView.animatedImage = nil;
     }
-    //    ;
     [super show:text];
 }
 
@@ -31,7 +30,7 @@
     config.loaderView = [[FLAnimatedImageView alloc] init];
     config.loaderView.contentMode = UIViewContentModeScaleAspectFit;
     config.textContainer.backgroundColor = [UIColor clearColor];
-//    config.hideOnTouch = NO;
+    config.hideOnTouch = NO;
     config.hideTimeOut = 0.0f;
     __weak __typeof(config) weakConfig = config;
     config.setupContainer = ^{
@@ -42,9 +41,9 @@
             make.right.equalTo(weakConfig.textContainer.mas_right).with.offset(-weakConfig.textEdgeInsets.right);
         }];
         UIView *textMargin = [UIView new];
-        textMargin.backgroundColor = [UIColor AIMToastBacgroundColor];
+        textMargin.backgroundColor = [UIColor AIMLoaderTextBackground];
         [textMargin addSubview:weakConfig.textLabel];
-        
+        textMargin.layer.cornerRadius = 5.0f;
         [weakConfig.textLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.equalTo(textMargin).with.insets(weakConfig.textEdgeInsets);
             
@@ -72,6 +71,19 @@
 
 - (FLAnimatedImageView *)loaderView {
     return [self.additionalConfig objectForKey:@"loaderView"];
+}
+
+@end
+
+@implementation UIColor (AIMLoader)
+
++ (UIColor *)AIMLoaderTextBackground {
+    Class colorClass = [UIColor class];
+    if ([colorClass respondsToSelector:@selector(loaderTextBackground)] ) {
+        return [colorClass performSelector:@selector(loaderTextBackground)];
+    } else {
+        return  [UIColor colorWithRed:0.16 green:0.086 blue:0.059 alpha:1.000];
+    }
 }
 
 @end

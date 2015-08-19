@@ -9,12 +9,19 @@
 #import "AIMToast.h"
 #import "FLAnimatedImageView.h"
 
-@interface AIMLoader : AIMToast
-
-+ (void)show:(NSString *)text gifName:(NSString *)name;
-
+@protocol AIMLoderColor <NSObject>
++ (UIColor *)loaderTextBackground;
 @end
 
+@interface AIMLoader : AIMToast
++ (void)show:(NSString *)text gifName:(NSString *)name;
+@end
+
+@interface UIColor (AIMLoader)
+
++ (UIColor *)AIMLoaderTextBackground;
+
+@end
 
 @interface GKRToastConfigure (AIMLoader)
 @property (strong, nonatomic) FLAnimatedImageView *loaderView;
