@@ -66,3 +66,5 @@ animateHideBackground | void(^)(`UIView *backgroundView`) | block call when `bac
 ## Check the full video on Youtube
 
 [![Check the full video](http://img.youtube.com/vi/QUvb8lZWkhg/0.jpg)](https://www.youtube.com/watch?v=QUvb8lZWkhg)
+
+or [try it by yourself](https://appetize.io/embed/jt4r91ch6tmnpepgyexcuf3v94?device=iphone5s&scale=100&autoplay=false&orientation=portrait&deviceColor=black)
