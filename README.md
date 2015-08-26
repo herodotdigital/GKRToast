@@ -1,5 +1,5 @@
 # GKRToast
-iOS replay for Android Toast massages, made with easy customization in mind.
+iOS replay for Android Toast messages made with easy customization in mind.
 
 ## How to use 
 
