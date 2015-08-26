@@ -11,19 +11,25 @@ For default style toast just write:
 
 For other style use one of two classes `AIMToast` or `AIMFancyToast` or create custom subclass
 
+## Check video on Youtube or try it by yourself
+
+[![Check the full video](http://img.youtube.com/vi/QUvb8lZWkhg/0.jpg)](https://www.youtube.com/watch?v=QUvb8lZWkhg)
+
+or [try it by yourself](https://appetize.io/embed/jt4r91ch6tmnpepgyexcuf3v94?device=iphone5s&scale=100&autoplay=false&orientation=portrait&deviceColor=black)
+
 ## Available classes and styles
 
 **GKRToast** - base class with Android look'n'feel
 <br>
-<img src="https://github.com/AllinMobile/GKRToast/raw/master/Assets/GKRToast.gif" width="320">
+<img src="https://github.com/AllinMobile/GKRToast/raw/master/Assets/GKRToast.gif" width="280">
 
 **AIMToast** - class that we are using at All in Mobile, background and text color can be easly customized 
 <br>
-<img src="https://raw.githubusercontent.com/AllinMobile/GKRToast/master/Assets/AIMToast.gif" width="320">
+<img src="https://raw.githubusercontent.com/AllinMobile/GKRToast/master/Assets/AIMToast.gif" width="280">
 
 **AIMFancyToast** - example how to create more complicated animations
 <br>
-<img src="https://raw.githubusercontent.com/AllinMobile/GKRToast/master/Assets/AIMFancyToast.gif" width="320">
+<img src="https://raw.githubusercontent.com/AllinMobile/GKRToast/master/Assets/AIMFancyToast.gif" width="280">
 
 ## Custom subclass
 If you want make a toast with custom layout and animation, you should create a subclass of `GKRToast`, override `+ (GKRToastConfigure *)configure` method and return new configuration for toast. For example if you want to create a toast, that shows from left-hand side, you should write something like that:
@@ -63,8 +69,3 @@ animateShowBackground | void(^)(`UIView *backgroundView`) | block call after `ba
 animateHideLabel | void(^)(`UIView *textContainer`, `UILabel *textLabel`, `MASConstraint *centerX`, `MASConstraint *centerY`) | block call when `textContainer` should be remove from current window; remember to call `[textLabel removeFromSuperview]` and `[textContainer removeFromSuperview]` after animation is ended | alpha transition from 1 to 0 in 0.5 s
 animateHideBackground | void(^)(`UIView *backgroundView`) | block call when `backgroundView` should be remove from current window; remember to call `[backgroundView removeFromSuperview]` after animation is ended | alpha transition from 1 to 0 in 0.5 s
 
-## Check the full video on Youtube
-
-[![Check the full video](http://img.youtube.com/vi/QUvb8lZWkhg/0.jpg)](https://www.youtube.com/watch?v=QUvb8lZWkhg)
-
-or [try it by yourself](https://appetize.io/embed/jt4r91ch6tmnpepgyexcuf3v94?device=iphone5s&scale=100&autoplay=false&orientation=portrait&deviceColor=black)
