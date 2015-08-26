@@ -11,7 +11,7 @@ For default style toast just write:
 
 For other style use one of two classes `AIMToast` or `AIMFancyToast` or create custom subclass
 
-## Avaliable classes and styles
+## Available classes and styles
 
 **GKRToast** - base class with Android look'n'feel
 <br>
@@ -26,7 +26,7 @@ For other style use one of two classes `AIMToast` or `AIMFancyToast` or create c
 <img src="https://raw.githubusercontent.com/AllinMobile/GKRToast/master/Assets/AIMFancyToast.gif" width="320">
 
 ## Custom subclass
-If you want make a toast with custom layout and animation, you should create a subclass of `GKRToast`, override `+ (GKRToastConfigure *)configure` method and return new confgiration for toast. For example if you want to creat a toast, thast shows from left-hand side, you should write something like that:
+If you want make a toast with custom layout and animation, you should create a subclass of `GKRToast`, override `+ (GKRToastConfigure *)configure` method and return new configuration for toast. For example if you want to create a toast, that shows from left-hand side, you should write something like that:
 
 ```objective-c
 
